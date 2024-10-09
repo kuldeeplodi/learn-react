@@ -19,3 +19,7 @@
 ### npm install
 
 ### npm run dev
+
+##### React (core library which take references)
+
+##### ReactDOM (it is a implementation on web )
