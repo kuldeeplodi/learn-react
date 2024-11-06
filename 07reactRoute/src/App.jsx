@@ -1,13 +1,16 @@
 import { useState } from "react";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 import "./App.css";
+import { Outlet } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <h1 className="bg-green-200">React Route</h1>
+      <Header></Header>
+      <Outlet></Outlet>
+      <Footer></Footer>
     </>
   );
 }
