@@ -1,0 +1,31 @@
+counter 
+
+const [counter,setcounter]=usestate(15)
+
+
+const addvalues=()=>{
+    setcounter(counter+1)
+    setcounter(counter+1)
+    setcounter(counter+1)
+    setcounter(counter+1)
+}
+
+🔴Expected Result: counter should increase by 4 (from 15 to 19).
+🟢 Actual Result: counter increases only by 1 (from 15 to 16)
+
+
+Why Does This Happen?
+
+React Batches State Updates
+
+React groups multiple state updates when they are based on the same previous state.
+Since counter does not update immediately, each setCounter(counter + 1) still sees the old value of counter (15).
+
+
+
+const addValues = () => {
+    setCounter(prevCounter => prevCounter + 1);
+    setCounter(prevCounter => prevCounter + 1);
+    setCounter(prevCounter => prevCounter + 1);
+    setCounter(prevCounter => prevCounter + 1);
+};

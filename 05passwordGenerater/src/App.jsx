@@ -3,6 +3,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import "./App.css";
 
 function App() {
+
+  // usestate hook
   const [length, setLength] = useState(8);
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [charAllowed, setCharAllowed] = useState(false);
@@ -30,8 +32,14 @@ function App() {
   const passwordref = useRef(null);
   const copyPasswordToClipboard = useCallback(() => {
     passwordref.current?.select();
+    // passwordref.current?.setSelectionRange(0, 9);
     window.navigator.clipboard.writeText(password);
   }, [password]);
+
+  const clearPassword = useCallback(() => {
+    setPassword("");
+  }
+  , [setPassword]);
   return (
     <>
       <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-4 my-8 text-orange-500 bg-gray-700 justify-center">
@@ -47,10 +55,18 @@ function App() {
           />
           <button
             onClick={copyPasswordToClipboard}
-            className="px-2 py-2 bg-blue-500 text-white"
+            className="px-2 py-2 bg-blue-500 text-white rounded-lg"
           >
             copy
           </button>
+          <div>
+          <button
+            onClick={clearPassword}
+            className="px-2 py-2 bg-red-500 text-white ml-5 rounded-lg  "
+          >
+            clear
+          </button>
+          </div>
         </div>
         <div className="flex text-sm gap-x-2">
           <div className="flex items-center gap-x-1">

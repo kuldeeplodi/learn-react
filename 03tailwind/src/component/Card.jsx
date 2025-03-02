@@ -1,5 +1,5 @@
 import React from "react";
-function Card({ username }) {
+function Card({ username="vanshika" }) {
   return (
     <>
       <figure className="md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800 m-5">

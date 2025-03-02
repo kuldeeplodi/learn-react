@@ -4,11 +4,11 @@ import useCurrencyInfo from "./hooks/useCurrencyInfo";
 // import "./App.css";
 
 function App() {
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState();
 
   const [from, setFrom] = useState("usd");
   const [to, setTo] = useState("inr");
-  const [convertAmount, setConvertAmount] = useState(0);
+  const [convertAmount, setConvertAmount] = useState();
   const currencyInfo = useCurrencyInfo(from);
 
   const options = Object.keys(currencyInfo);
