@@ -36,12 +36,12 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App></App>}>
       <Route path="" element={<Home></Home>}></Route>
-      <Route path="about" element={<About></About>}></Route>
-      <Route path="contact" element={<Contact></Contact>}></Route>
+      <Route path="/about" element={<About></About>}></Route>
+      <Route path="/contact" element={<Contact></Contact>}></Route>
       <Route path="user/:userid" element={<User></User>}></Route>
       <Route 
       loader={gitInfo}
-      path="github" element={<Github></Github>}></Route>
+      path="/github" element={<Github></Github>}></Route>
     </Route>
   )
 );
