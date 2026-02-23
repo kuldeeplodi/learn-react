@@ -8,7 +8,7 @@ function App() {
 
   const [from, setFrom] = useState("usd");
   const [to, setTo] = useState("inr");
-  const [convertAmount, setConvertAmount] = useState();
+  const [convertAmount, setConvertAmount] = useState( );
   const currencyInfo = useCurrencyInfo(from);
 
   const options = Object.keys(currencyInfo);
@@ -69,7 +69,7 @@ function App() {
                   setTo(currency);
                 }}
                 selectCurrency={to}
-                amountDisable
+                
               />
             </div>
             <button
